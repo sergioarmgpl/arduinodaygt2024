@@ -26,7 +26,7 @@ spec:
         - name: DEVICE
           value: "/dev/ttyACM0"
         - name: BAUD_RATE
-          value: 9600
+          value: "9600"
         - name: REDIS_HOST
           value: "1"
         - name: REDIS_AUTH
