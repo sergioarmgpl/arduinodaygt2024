@@ -24,7 +24,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: DEVICE
-          value: "/dev/ttyACM0"
+          value: "/dev/ttyAMA0"
         - name: BAUD_RATE
           value: "9600"
         - name: REDIS_HOST
