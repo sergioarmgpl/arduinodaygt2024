@@ -55,4 +55,4 @@ EOF
 kubectl apply -f yaml
 ```
 
-kubectl port-forward --address 0.0.0.0 svc/grafana 3000:3000
+kubectl port-forward -n monitoring --address 0.0.0.0 svc/grafana 3000:3000
