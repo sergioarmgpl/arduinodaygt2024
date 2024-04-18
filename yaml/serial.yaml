@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: serial
+  name: serial
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: serial
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: serial
+    spec:
+      containers:
+      - image: sergioarmgpl/serial
+        name: serial
+        imagePullPolicy: Always
+        env:
+        - name: DEVICE
+          value: "/dev/ttyACM0"
+        - name: BAUD_RATE
+          value: 9600
+        - name: REDIS_HOST
+          value: "1"
+        - name: REDIS_AUTH
+          value: "YOUR_PASSWORD"
+        securityContext:
+          privileged: true
+          capabilities:
+            add: ["SYS_ADMIN"]
+        volumeMounts:
+        - mountPath: /dev
+          name: dev-volume
+      volumes:
+      - name: dev-volume
+        hostPath:
+          path: /dev
+          type: Directory
+status: {}
