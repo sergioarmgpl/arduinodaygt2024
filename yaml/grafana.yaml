@@ -15,7 +15,7 @@ data:
                 "orgId": 1,
                 "password":"YOUR_PASSWORD",
                 "type": "redis",
-                "url": "http://redis.monitoring.svc:6379",
+                "url": "redis://redis.monitoring.svc:6379",
                 "version": 1
             }
         ]
