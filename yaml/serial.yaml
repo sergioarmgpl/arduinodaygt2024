@@ -28,7 +28,7 @@ spec:
         - name: BAUD_RATE
           value: "9600"
         - name: REDIS_HOST
-          value: "1"
+          value: "redis"
         - name: REDIS_AUTH
           value: "YOUR_PASSWORD"
         securityContext:

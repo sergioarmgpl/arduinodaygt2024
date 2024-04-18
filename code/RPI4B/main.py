@@ -17,13 +17,13 @@ device = os.environ['DEVICE']
 baudrate = int(os.environ['BAUD_RATE'])
 ser = serial.Serial (device,baudrate)    #Open port with baud rate
 while True:
-    print("Waiting for read")
+    print("Waiting for read",file=sys.stderr)
     received_data = ser.read()              #read serial port
     sleep(0.03)
     data_left = ser.inWaiting()             #check for remaining byte
     received_data+=ser.read(data_left)
     received_data=received_data.decode('utf-8')
-    print("received")
+    print("received",file=sys.stderr)
     #transform data
     json_data = json.loads(received_data)
     t=json_data["t"]
