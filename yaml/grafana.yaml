@@ -44,12 +44,12 @@ spec:
         - name: grafana
           containerPort: 3000
         resources:
-          limits:
-            memory: "1Gi"
-            cpu: "1000m"
+#          limits:
+#            memory: "1Gi"
+#            cpu: "1000m"
           requests:
-            memory: 500M
-            cpu: "500m"
+            memory: 200M
+            cpu: "200m"
         volumeMounts:
           - mountPath: /var/lib/grafana
             name: grafana-storage

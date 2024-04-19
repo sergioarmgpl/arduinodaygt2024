@@ -51,8 +51,20 @@ metadata:
 EOF
 
 # Deploy the YAML files
+To deploy the YAML files run the following command:
 ```
 kubectl apply -f yaml
 ```
-
+To access the Grafana Dashboard run the following command:
+```
 kubectl port-forward -n monitoring --address 0.0.0.0 svc/grafana 3000:3000
+```
+
+
+# References
+- https://github.com/vegasbrianc/prometheus/blob/master/grafana/provisioning/datasources/datasource.yml
+- https://www.abelectronics.co.uk/kb/article/31/set-a-static-ip-address-on-raspberry-pi-os-bookworm
+- https://stackoverflow.com/questions/65896681/exec-docker-credential-desktop-exe-executable-file-not-found-in-path
+- https://forums.docker.com/t/docker-desktop-error-cannot-connect-to-the-docker-daemon-at-unix-var-run-docker-sock-is-the-docker-daemon-running/138438/2
+- https://github.com/docker/docker-credential-helpers/issues/149
+- https://github.com/abiosoft/colima/issues/52
