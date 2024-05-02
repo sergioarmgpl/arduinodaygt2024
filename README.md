@@ -32,7 +32,7 @@ https://github.com/abiosoft/colima/issues/52
 
 # Installing MetalLB
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.4/config/manifests/metallb-native.yaml
-
+```
 cat <<EOF | kubectl create -f -
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
@@ -49,7 +49,7 @@ metadata:
   name: example
   namespace: metallb-system
 EOF
-
+```
 # Deploy the YAML files
 To deploy the YAML files run the following command:
 ```
